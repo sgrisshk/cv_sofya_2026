@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="title" shape-rendering="crispEdges">
+  <title id="title">IT's TECH — BMSTU</title>
+  <g fill="currentColor">
+    <!-- stepped frame -->
+    <path d="M78 52h484v12h18v18h12v276h-12v18h-18v12H78v-12H60v-18H48V82h12V64h18z" fill="none" stroke="currentColor" stroke-width="12"/>
+    <!-- ITS_ / 14px pixel grid -->
+    <path d="M96 130h14v98H96zm42 0h84v14h-35v84h-14v-84h-35zm112 0h70v14h-56v28h56v56h-70v-14h56v-28h-56zm98 84h70v14h-70z"/>
+    <!-- TECH / 18px pixel grid -->
+    <path d="M96 264h108v18h-45v108h-18V282H96zm126 0h90v18h-72v36h63v18h-63v36h72v18h-90zm108 0h90v18h-72v90h72v18h-90zm108 0h18v54h54v-54h18v126h-18v-54h-54v54h-18z"/>
+    <!-- BMSTU signature -->
+    <path d="M96 410h8v8h-8zm12 0h8v8h-8zm12 0h8v8h-8zm16 0h44v8h-44z"/>
+  </g>
+</svg>
