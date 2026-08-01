@@ -342,7 +342,7 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
 .low-power .noise,.low-power .particles{display:none}
 .low-power .topbar,.low-power .language-menu{backdrop-filter:none}
 .webgl-fallback{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#474747,#111 58%,#000)}
-.webgl-fallback:before{content:"SELECTED EXPERIENCE\A 09 PROJECTS · 2023—NOW";position:relative;z-index:3;white-space:pre;text-align:center;font:600 clamp(24px,5vw,64px)/1.15 var(--display);letter-spacing:-.035em;color:var(--paper)}
+.webgl-fallback:before{content:"SELECTED EXPERIENCE\A 09 PROJECTS · 2023-NOW";position:relative;z-index:3;white-space:pre;text-align:center;font:600 clamp(24px,5vw,64px)/1.15 var(--display);letter-spacing:-.035em;color:var(--paper)}
 .webgl-fallback canvas,.webgl-fallback .spiral-index{display:none}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
