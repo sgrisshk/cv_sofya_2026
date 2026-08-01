@@ -151,6 +151,9 @@ function resizeThree() {
   const rect = host.getBoundingClientRect()
   renderer.setSize(rect.width, rect.height, false)
   camera.aspect = rect.width / rect.height
+  const narrowSceneOffset = Math.max(0, 1.2 - camera.aspect) * 3.6
+  const tabletOffset = innerWidth > 720 && innerWidth <= 1366 ? .55 : 0
+  camera.position.z = 11.8 + Math.min(narrowSceneOffset, 1.65) + tabletOffset
   camera.updateProjectionMatrix()
 }
 new ResizeObserver(resizeThree).observe(host)
