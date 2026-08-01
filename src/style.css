@@ -347,3 +347,10 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
   html{scroll-behavior:auto}
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Editorial hero signature; the rest of the interface stays technical. */
+.hero h1{font-family:var(--editorial);font-weight:200;font-style:normal;line-height:.82;letter-spacing:-.025em}
+.hero h1 span:last-child{letter-spacing:-.035em}
+@media(max-width:1050px){.hero h1{font-size:clamp(68px,11vw,104px);line-height:.84}}
+@media(max-width:720px){.hero h1{font-size:14.2vw;line-height:.83}.hero h1 span:last-child{letter-spacing:-.045em}}
+@media(max-width:390px){.hero h1{font-size:13.7vw}}

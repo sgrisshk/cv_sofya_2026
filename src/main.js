@@ -32,7 +32,7 @@ const cards = [
   { company: 'KICKSHARING', role: 'FRONTEND', metric: 'WEB', highlight: 'FULL WEBSITE LIVE', color: '#11AF3C', target: '#work' },
   { company: 'BANCA', role: 'PRODUCTION WEB', metric: 'LIVE', highlight: 'PUBLIC PRODUCT', color: '#0556F5', target: '#work' },
   { company: 'ITS-TECH', role: 'UI/UX + FRONTEND', metric: 'LAB', highlight: 'STUDENT TECH SYSTEMS', color: '#E0E0CE', target: '#experience' },
-  { company: 'STEN TRAVEL', role: 'TOURISM WEBSITE', metric: 'TOUR', highlight: 'PREVIEW AVAILABLE', color: '#FDD109', target: '#work' }
+  { company: 'STEN TRAVEL', role: 'TOURISM WEBSITE', metric: 'ROUTE', highlight: 'PREVIEW AVAILABLE', color: '#FDD109', target: '#work' }
 ]
 
 const canvas = document.querySelector('#experience-spiral')
