@@ -350,8 +350,8 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
 }
 
 /* Editorial hero signature; the rest of the interface stays technical. */
-.hero h1{font-family:var(--display);font-size:clamp(82px,6.7vw,130px);font-weight:600;font-style:normal;line-height:.84;letter-spacing:-.045em}
+.hero h1{font-family:var(--display);font-size:clamp(86px,7vw,136px);font-weight:600;font-style:normal;line-height:.84;letter-spacing:-.045em}
 .hero h1 span:last-child{letter-spacing:-.055em}
-@media(max-width:1050px){.hero h1{font-size:clamp(76px,12vw,116px);line-height:.86}}
-@media(max-width:720px){.hero h1{font-size:14.8vw;line-height:.85}.hero h1 span:last-child{letter-spacing:-.055em}}
-@media(max-width:390px){.hero h1{font-size:14.4vw}}
+@media(max-width:1050px){.hero h1{font-size:clamp(79px,12.5vw,121px);line-height:.86}}
+@media(max-width:720px){.hero h1{font-size:15.2vw;line-height:.85}.hero h1 span:last-child{letter-spacing:-.055em}}
+@media(max-width:390px){.hero h1{font-size:14.8vw}}
