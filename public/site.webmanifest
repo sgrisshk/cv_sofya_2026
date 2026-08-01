@@ -1,0 +1,17 @@
+{
+  "name": "Sofya Grishkova — Software Engineer",
+  "short_name": "GRISSHK",
+  "description": "Full-stack, cloud and creative frontend engineering portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -7,11 +7,25 @@ npm install
 npm run dev
 ```
 
-Контент адаптирован по `Sofya_Grishkova_CV.pdf`. Перед публикацией можно дополнить опыт визуальными материалами реальных проектов и ссылками на GitHub/кейсы.
+Контент адаптирован по `Sofya_Grishkova_CV.pdf`.
 
-## Interactive hero
+## Production
 
-The hero uses the compact computer model and baked texture from the local MIT-licensed `portfolio-website` reference by Henry Heffernan. Its monitor runs a custom animated CanvasTexture with frontend/cloud/product modes, and the model can be rotated directly.
+```bash
+npm run build          # production bundle in dist/
+npm run deploy:check   # build + Cloudflare dry run
+npm run deploy         # build + Cloudflare deploy
+```
+
+Cloudflare configuration lives in `wrangler.jsonc`. Static headers, caching,
+security policy, manifest, robots and sitemap are copied from `public/` during
+the Vite build. The canonical production URL is `https://grisshk.work/`.
+
+## Interactive experience
+
+The hero contains an interactive Three.js experience orbit, with GSAP-driven
+motion and reduced-motion/mobile fallbacks. Three.js and GSAP are split into
+cacheable vendor chunks for production.
 
 ## Local inspiration sources
 
@@ -21,4 +35,7 @@ The hero uses the compact computer model and baked texture from the local MIT-li
 - `stack-scroll` — stacked, scroll-driven content choreography.
 - `AW-2025-Portfolio` — CC BY-NC 4.0; wave-grid, binary separator, screen wipes and typographic direction were substantially reworked for this portfolio.
 
-The local PP/Bigger font files came with the AW reference repository, but no separate font licence was included. Verify or replace their licences before commercial publication.
+The local PP font files came with the AW reference repository, but no separate
+font licence was included. Verify or replace their licences before commercial
+publication. Unused source assets are kept in `source-assets/` and are excluded
+from the deployed bundle.
