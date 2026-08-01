@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 initI18n()
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
+const touchPrimary = matchMedia('(hover: none) and (pointer: coarse)').matches
 const saveData = navigator.connection?.saveData === true
 const lowPower = saveData || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || (navigator.deviceMemory && navigator.deviceMemory <= 2)
 document.documentElement.classList.toggle('low-power', lowPower)
@@ -45,7 +46,7 @@ try {
 }
 
 if (renderer) {
-renderer.setPixelRatio(Math.min(devicePixelRatio, lowPower ? 1.25 : 1.75))
+renderer.setPixelRatio(Math.min(devicePixelRatio, lowPower ? 1.25 : touchPrimary ? 1.4 : 1.75))
 renderer.outputColorSpace = THREE.SRGBColorSpace
 renderer.setClearColor(0x000000, 0)
 const scene = new THREE.Scene()
@@ -122,7 +123,7 @@ cards.concat(cards).forEach((card, index) => {
   meshes.push(mesh)
 })
 
-let pointerX = 0, pointerY = 0, targetRotation = 0, velocity = 0, dragging = false, dragX = 0
+let pointerX = 0, pointerY = 0, targetRotation = 0, velocity = 0, dragging = false, touchTracking = false, suppressClick = false, dragX = 0, dragY = 0
 function setPointer(event) {
   const rect = host.getBoundingClientRect()
   pointerX = ((event.clientX - rect.left) / rect.width - .5) * 2
@@ -130,15 +131,39 @@ function setPointer(event) {
 }
 host.addEventListener('pointermove', event => {
   setPointer(event)
+  if (touchTracking) {
+    const deltaX = event.clientX - dragX
+    const deltaY = event.clientY - dragY
+    if (Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+      velocity += deltaX * .0007
+      suppressClick = suppressClick || Math.abs(deltaX) > 5
+    }
+    dragX = event.clientX
+    dragY = event.clientY
+    return
+  }
   if (dragging) { const delta = event.clientX - dragX; velocity += delta * .0009; dragX = event.clientX }
 })
-host.addEventListener('pointerdown', event => { if (event.pointerType === 'touch') return; dragging = true; dragX = event.clientX; host.setPointerCapture(event.pointerId) })
-host.addEventListener('pointerup', event => { if (!dragging) return; dragging = false; if (host.hasPointerCapture(event.pointerId)) host.releasePointerCapture(event.pointerId) })
+host.addEventListener('pointerdown', event => {
+  dragX = event.clientX
+  dragY = event.clientY
+  if (event.pointerType === 'touch') { touchTracking = true; suppressClick = false; return }
+  dragging = true
+  host.setPointerCapture(event.pointerId)
+})
+host.addEventListener('pointerup', event => {
+  if (event.pointerType === 'touch') { touchTracking = false; return }
+  if (!dragging) return
+  dragging = false
+  if (host.hasPointerCapture(event.pointerId)) host.releasePointerCapture(event.pointerId)
+})
+host.addEventListener('pointercancel', () => { dragging = false; touchTracking = false })
 host.addEventListener('pointerleave', () => { if (!dragging) { pointerX = 0; pointerY = 0 } })
 
 const raycaster = new THREE.Raycaster()
 const clickPoint = new THREE.Vector2()
 host.addEventListener('click', event => {
+  if (suppressClick) { suppressClick = false; return }
   if (Math.abs(velocity) > .018) return
   const rect = canvas.getBoundingClientRect()
   clickPoint.set((event.clientX - rect.left) / rect.width * 2 - 1, -((event.clientY - rect.top) / rect.height * 2 - 1))
@@ -161,18 +186,21 @@ new ResizeObserver(resizeThree).observe(host)
 let lastScroll = scrollY
 addEventListener('scroll', () => {
   const delta = scrollY - lastScroll
-  velocity += delta * .00016
+  if (!touchPrimary) velocity += delta * .00016
   lastScroll = scrollY
 }, { passive: true })
 
 let heroVisible = true
 let renderActive = false
 let animationFrame = 0
-function render() {
+let lastRenderAt = 0
+function render(time = 0) {
   if (!renderActive) return
   animationFrame = requestAnimationFrame(render)
+  if (touchPrimary && time - lastRenderAt < 30) return
+  lastRenderAt = time
   velocity *= .93
-  targetRotation += .0014 + velocity
+  targetRotation += (touchPrimary ? .001 : .0014) + velocity
   orbit.rotation.y += (targetRotation - orbit.rotation.y) * .065
   orbit.rotation.x += ((-.08 + pointerY * .09) - orbit.rotation.x) * .045
   orbit.position.x += ((pointerX * -.22) - orbit.position.x) * .045

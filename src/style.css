@@ -355,3 +355,19 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
 @media(max-width:1050px){.hero h1{font-size:clamp(79px,12.5vw,121px);line-height:.86}}
 @media(max-width:720px){.hero h1{font-size:15.2vw;line-height:.85}.hero h1 span:last-child{letter-spacing:-.055em}}
 @media(max-width:390px){.hero h1{font-size:14.8vw}}
+
+/* Touch layout: Safari must keep the bottom navigation relative to the viewport. */
+@media (max-width:1050px){
+  html{scroll-behavior:auto}
+  .topbar{background:#050505;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .topbar nav{position:fixed;top:auto;bottom:max(7px,env(safe-area-inset-bottom));transform:none}
+  .hero-art{touch-action:pan-y;overscroll-behavior:auto}
+  .noise{display:none}
+}
+@media (hover:none) and (pointer:coarse){
+  html{scroll-behavior:auto}
+  body{cursor:auto;-webkit-overflow-scrolling:touch}
+  .pointer,.noise{display:none}
+  .topbar,.language-menu{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .hero-art{touch-action:pan-y;overscroll-behavior:auto;cursor:default}
+}
