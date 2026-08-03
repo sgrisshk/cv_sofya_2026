@@ -342,6 +342,36 @@ Object.assign(zh, {
   'Services':'服务','AVAILABLE FOR SELECT CLIENT PROJECTS':'可承接精选客户项目','VIEW WORK':'查看项目','START A PROJECT ↗':'启动项目 ↗','[ SERVICES / PROJECT ENGAGEMENTS ]':'[ 服务 / 项目合作 ]','PRODUCT WEBSITES':'产品网站','Public-facing websites designed and engineered for launch.':'面向公众、为正式上线而设计与开发的网站。','INTERNAL & B2B PLATFORMS':'内部与 B2B 平台','Complex interfaces, dashboards and operational tools.':'复杂界面、数据面板与业务运营工具。','FULL-STACK PRODUCT DELIVERY':'全栈产品交付','Frontend, backend, APIs and production infrastructure.':'前端、后端、API 与生产基础设施。','UI/UX & DESIGN SYSTEMS':'UI/UX 与设计系统','Product flows, responsive interfaces and reusable systems.':'产品流程、响应式界面与可复用系统。','[ TECHNICAL TOOLKIT ]':'[ 技术工具栈 ]','HAVE A PRODUCT':'有产品','TO BUILD?':'需要打造？','Tell me what you are launching, rebuilding or trying to scale.':'告诉我你正在上线、重构或计划扩展的产品。','HIRING FOR A ROLE? DOWNLOAD CV ↓':'正在招聘？下载简历 ↓'
 })
 
+Object.assign(ru, {
+  'Projects':'Проекты',
+  'Capabilities':'Компетенции',
+  'CURRENT':'СЕЙЧАС',
+  'Full-stack & cloud':'Full-stack и cloud',
+  'DELIVERY':'РЕЗУЛЬТАТ',
+  'Active or shipped projects':'Активных и запущенных проектов',
+  'SCOPE':'МАСШТАБ',
+  'Interface to infrastructure':'От интерфейса до инфраструктуры',
+  '[ SELECTED COLLABORATIONS / 2023-NOW ]':'[ ИЗБРАННЫЕ ПРОЕКТЫ И КОМАНДЫ / 2023-СЕЙЧАС ]',
+  '[ SELECTED PROJECTS ]':'[ ИЗБРАННЫЕ ПРОЕКТЫ ]',
+  'SELECTED WORK.':'ИЗБРАННЫЕ РАБОТЫ.',
+  'REAL DELIVERY.':'РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ.',
+  '3 PROJECTS TO EXPLORE ↘':'3 ПРОЕКТА ДЛЯ ПРОСМОТРА ↘',
+  'THE PUBLIC WORK IS ONLY PART OF IT.':'ПУБЛИЧНЫЕ ПРОЕКТЫ — ЛИШЬ ЧАСТЬ МОЕЙ РАБОТЫ.',
+  'Beyond these projects, I have designed and shipped internal platforms, private B2B products and client systems protected by NDA. They add significant product depth to the work you can see here.':'Помимо этих проектов, я проектировала и запускала внутренние платформы, закрытые B2B-продукты и клиентские системы под NDA. Этот опыт дополняет публичные кейсы глубокой продуктовой и инженерной практикой.',
+  '01 / CURRENT ROLE':'01 / ТЕКУЩАЯ РОЛЬ',
+  '02 / CURRENT ROLE':'02 / ТЕКУЩАЯ РОЛЬ',
+  '03 / EXPERIENCE':'03 / ОПЫТ',
+  '04 / EXPERIENCE':'04 / ОПЫТ',
+  '05 / EXPERIENCE':'05 / ОПЫТ',
+  '06 / EXPERIENCE':'06 / ОПЫТ',
+  '07 / EXPERIENCE':'07 / ОПЫТ',
+  'Rebuilt the complete frontend from scratch and delivered backend systems across 3+ AI cloud platforms.':'Полностью переписала frontend с нуля и разработала часть backend-систем для более чем трёх облачных AI-платформ.',
+  'Frontend architecture from zero':'Frontend-архитектура с нуля',
+  'Backend development':'Backend-разработка',
+  '3+ cloud platforms':'Более трёх cloud-платформ',
+  '[ 02 / CAPABILITIES ]':'[ 02 / КОМПЕТЕНЦИИ ]'
+})
+
 const dictionaries = { ru, nl, fr, es, de, zh }
 
 let language = 'en'

@@ -2,7 +2,7 @@ import './style.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initI18n } from './i18n.js'
-import { createElement, Pause, Play } from 'lucide'
+import { createElement, Pause, PlaneTakeoff, Play } from 'lucide'
 
 gsap.registerPlugin(ScrollTrigger)
 initI18n()
@@ -12,6 +12,15 @@ const saveData = navigator.connection?.saveData === true
 const lowPower = saveData || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || (navigator.deviceMemory && navigator.deviceMemory <= 2)
 document.documentElement.classList.toggle('low-power', lowPower)
 document.documentElement.classList.toggle('reduced-motion', reducedMotion)
+
+document.querySelectorAll('.travel-route i').forEach(route => {
+  route.append(createElement(PlaneTakeoff, {
+    width: 30,
+    height: 30,
+    'stroke-width': 1.7,
+    'aria-hidden': 'true'
+  }))
+})
 
 if (!reducedMotion) {
   gsap.from('.hero h1 span, .hero .intro, .hero-offer, .hero-proof', {

@@ -598,3 +598,55 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
 .skill:nth-child(n+7):hover{background:rgba(224,224,206,.48);color:var(--ink)}
 
 .stack-title h2 i{color:var(--blue)}
+.live-grid + .work-disclosure{margin:28px 0 0}
+
+.service-grid article{cursor:default}
+.service-grid article:hover{
+  transform:none;
+  background:rgba(224,224,206,.3);
+  color:var(--ink);
+}
+.service-grid article:hover b,
+.service-grid article:hover h3{color:var(--blue)}
+
+.travel-route i:after{display:none}
+.travel-route i{margin-right:44px}
+.travel-route i svg{
+  position:absolute;
+  right:-34px;
+  top:50%;
+  display:block;
+  color:var(--ink);
+  transform:translateY(-50%);
+}
+@media(max-width:720px){
+  .travel-route i{margin-right:36px}
+  .travel-route i svg{right:-29px}
+}
+
+@media(max-width:720px){
+  .live-grid + .work-disclosure{margin:16px 0 0}
+  .job.kicksharing-job h3{
+    font-size:9.6vw;
+    line-height:.92;
+    white-space:nowrap;
+    overflow-wrap:normal;
+    word-break:normal;
+    letter-spacing:-.045em;
+  }
+  .awards article.award-series .award-years{margin-top:22px}
+  .awards article.award-series h3{margin:34px 0 20px}
+  .topbar nav{height:60px;padding:6px}
+  .topbar nav a{
+    padding:0 4px;
+    font-size:10px;
+    font-weight:650;
+    line-height:1.1;
+    color:var(--paper);
+  }
+}
+
+@media(max-width:390px){
+  .job.kicksharing-job h3{font-size:9.2vw}
+  .topbar nav a{font-size:9px}
+}
