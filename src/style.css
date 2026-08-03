@@ -383,6 +383,80 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
   .hero{padding-top:138px}
 }
 
+/* 2026 clarity pass: static proof, deliberate rhythm, one interaction language. */
+.transition-mask,.hero-art,.tech-rail{display:none!important}
+.hero{
+  min-height:100svh;
+  padding-top:clamp(130px,15vh,190px);
+  padding-bottom:clamp(48px,7vh,88px);
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);
+  grid-template-rows:auto 1fr auto;
+  column-gap:clamp(48px,8vw,130px);
+  row-gap:28px;
+  align-items:start;
+  background:
+    linear-gradient(90deg,transparent 0 72%,rgba(224,224,206,.035) 72%),
+    repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(224,224,206,.06) calc(25% - 1px) 25%);
+}
+.hero .kicker{position:static;grid-column:1;grid-row:1;margin:0;color:var(--acid)}
+.hero h1{position:static;grid-column:1;grid-row:2;align-self:center;max-width:none;margin:clamp(38px,7vh,80px) 0 34px;padding:0!important;font-size:clamp(78px,9vw,164px);line-height:.82}
+.hero .intro{position:static;grid-column:1;grid-row:3;max-width:42ch;margin:0;padding:0;background:none;font-size:clamp(17px,1.35vw,22px)}
+.hero-offer{position:static;grid-column:2;grid-row:3;align-self:end;margin:0}
+.hero-proof{grid-column:2;grid-row:1/3;align-self:stretch;display:grid;border-top:1px solid rgba(224,224,206,.36);border-left:1px solid rgba(224,224,206,.2)}
+.hero-proof>div{padding:20px 0 20px 22px;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid rgba(224,224,206,.26)}
+.hero-proof small{font:9px/1 var(--mono);letter-spacing:.12em;color:var(--muted)}
+.hero-proof strong{margin:auto 0 12px;font:600 clamp(42px,5vw,78px)/.9 var(--display);letter-spacing:-.05em}
+.hero-proof>div:first-child strong{font-size:clamp(30px,3vw,50px)}
+.hero-proof span{font:11px/1.35 var(--mono);color:var(--muted)}
+
+.statement{min-height:560px;padding-top:clamp(88px,10vw,150px);padding-bottom:clamp(72px,8vw,120px)}
+.statement>.section-tag{margin-bottom:clamp(80px,11vw,170px)}
+.statement>p{margin:0}.statement-meta{margin-top:clamp(80px,10vw,150px)}
+
+.signal-rail{margin-top:0!important;padding:0 max(3vw,calc((100vw - 1500px)/2)) clamp(72px,8vw,120px)}
+.signal-rail header{padding:18px 0 16px}
+.logo-viewport{overflow:visible}
+.logo-track{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid var(--line)}
+.logo-track>a,.logo-track>.type-logo{width:auto;height:118px;min-width:0;padding:24px;border-bottom:1px solid var(--line);transition:background .2s,color .2s}
+.logo-track>a:focus-visible,.live-card:focus-visible,.hero-offer a:focus-visible,.service-grid article:focus-within{outline:3px solid var(--blue);outline-offset:3px}
+
+.live-work,.experience,.stack,.education{padding-top:clamp(88px,8vw,130px);padding-bottom:clamp(88px,8vw,130px)}
+.kick-card:after{display:none!important}
+.live-orbit,.live-bars,.kick-card:before{animation:none!important}
+.live-card,.service-grid article,.skill{transition:transform .2s ease,background-color .2s ease,color .2s ease}
+.live-card:hover,.service-grid article:hover,.skill:hover{transform:translateY(-3px)}
+
+.toolkit-label{margin-top:clamp(64px,8vw,110px)}
+.stack-orbit{grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;margin:26px 0 20px}
+.skill,.s1,.s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9{grid-column:span 4;height:auto;min-height:150px;padding:22px}
+.skill:nth-child(-n+3){grid-column:span 4;min-height:190px;background:var(--ink);color:var(--paper)}
+.skill:nth-child(n+7){grid-column:span 3;min-height:125px;background:rgba(224,224,206,.48)}
+.skill small{font-size:9px;color:inherit;opacity:.62}
+.skill span{font-size:clamp(14px,1.1vw,17px);line-height:1.55}
+
+@media(max-width:1050px){
+  .hero{min-height:auto;padding-top:150px;grid-template-columns:1fr;grid-template-rows:auto auto auto auto;gap:30px}
+  .hero .kicker{grid-column:1;grid-row:1}.hero h1{grid-column:1;grid-row:2;margin:35px 0 20px;font-size:clamp(76px,13vw,124px)}
+  .hero .intro{grid-column:1;grid-row:3}.hero-proof{grid-column:1;grid-row:4;grid-template-columns:repeat(3,1fr);min-height:240px;margin-top:30px}
+  .hero-offer{grid-column:1;grid-row:5;margin-top:4px}
+  .logo-track{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .skill,.s1,.s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9,.skill:nth-child(-n+3),.skill:nth-child(n+7){grid-column:span 6;min-height:145px}
+}
+@media(max-width:720px){
+  .hero{padding:100px 18px 48px;grid-template-rows:auto auto auto auto auto;gap:22px}
+  .hero h1{font-size:15vw;margin:28px 0 12px}.hero .intro{font-size:16px}.hero .intro br{display:none}
+  .hero-proof{grid-template-columns:1fr;min-height:0;margin-top:22px;border-left:0}
+  .hero-proof>div{min-height:126px;padding:16px 0;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+  .hero-proof small{grid-column:1/-1}.hero-proof strong,.hero-proof>div:first-child strong{margin:0;font-size:38px}.hero-proof span{max-width:18ch;text-align:right}
+  .hero-offer>div{grid-template-columns:1fr}.hero-offer a{min-height:44px}
+  .statement>.section-tag{margin-bottom:72px}.statement-meta{margin-top:72px}
+  .signal-rail{padding:0 18px 68px}.signal-rail header{padding-inline:0}
+  .logo-track{grid-template-columns:repeat(2,minmax(0,1fr))}.logo-track>a,.logo-track>.type-logo{height:96px;padding:17px}.type-logo{font-size:25px}
+  .stack-orbit{display:grid;grid-template-columns:1fr;gap:8px}
+  .skill,.s1,.s2,.s3,.s4,.s5,.s6,.s7,.s8,.s9,.skill:nth-child(-n+3),.skill:nth-child(n+7){grid-column:1;min-height:112px}
+}
+
 /* Dual-purpose positioning: portfolio proof plus a clear client path. */
 .hero .intro{bottom:148px}
 .hero-offer{position:absolute;z-index:6;left:max(3vw,calc((100vw - 1500px)/2));bottom:42px;display:grid;gap:12px}
@@ -426,3 +500,101 @@ body{font-size:16px;line-height:1.55;text-rendering:optimizeLegibility;-webkit-f
   .toolkit-label{margin-top:48px}
   .contact{min-height:760px}.contact-offer{margin-bottom:42px;gap:18px}.contact-offer>p{font-size:14px}.contact-offer>div{display:grid;grid-template-columns:1fr}.contact-offer a{min-height:42px}
 }
+
+/* Cascade lock for the clarity pass. */
+.hero-offer{position:static;left:auto;bottom:auto;grid-column:2;grid-row:3;align-self:end;margin:0}
+@media(max-width:1050px){
+  .hero{grid-template-rows:auto auto auto auto auto}
+  .hero-offer{grid-column:1;grid-row:5;margin-top:4px}
+  .hero-proof{grid-column:1;grid-row:4}
+}
+@media(max-width:720px){
+  .hero{grid-template-rows:auto auto auto auto auto;padding-bottom:48px}
+  .hero-offer>div{grid-template-columns:1fr}
+  .signal-rail header{padding-inline:0}
+  .logo-track>a,.logo-track>.type-logo{width:auto}
+}
+
+/* Header controls share the same visible hover, focus and press feedback. */
+.topbar nav a,
+.topbar .mark,
+.language-picker .language,
+.cv-link{
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .12s ease;
+}
+.topbar nav a{padding:10px 12px;margin:-10px -12px}
+.topbar nav a:hover,
+.topbar nav a:focus-visible{
+  background:var(--paper);
+  color:var(--ink);
+}
+.topbar .mark:hover,
+.topbar .mark:focus-visible{color:var(--acid)}
+.language-picker .language:hover,
+.language-picker .language:focus-visible{
+  border-color:var(--acid);
+  background-color:rgba(242,175,41,.14);
+  color:var(--acid);
+}
+.cv-link:hover,
+.cv-link:focus-visible{background:var(--paper);color:var(--ink)}
+.topbar nav a:focus-visible,
+.topbar .mark:focus-visible,
+.language-picker .language:focus-visible,
+.cv-link:focus-visible{
+  outline:2px solid var(--acid);
+  outline-offset:3px;
+}
+.topbar nav a:active,
+.topbar .mark:active,
+.language-picker .language:active,
+.cv-link:active{transform:translateY(1px) scale(.97)}
+
+@media(max-width:1050px){
+  .topbar nav a{margin:0;padding:0 5px}
+  .topbar nav a:hover,
+  .topbar nav a:focus-visible,
+  .topbar nav a:active{background:var(--acid);color:var(--ink)}
+}
+
+/* Calm, controllable company marquee. */
+.signal-rail{padding-inline:0}
+.signal-rail header{max-width:1500px;margin-inline:auto;padding-inline:max(3vw,calc((100vw - 1500px)/2));display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:28px}
+.logo-motion-toggle{width:36px;height:36px;padding:0;display:grid;place-items:center;border:1px solid var(--ink);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;transition:background-color .18s,color .18s,transform .12s}
+.logo-motion-toggle svg{display:block}
+.logo-motion-toggle:hover,.logo-motion-toggle:focus-visible{background:var(--ink);color:var(--paper)}
+.logo-motion-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.logo-motion-toggle:active{transform:translateY(1px) scale(.97)}
+.logo-viewport{overflow:hidden;border-inline:0}
+.logo-track{display:flex;grid-template-columns:none;width:max-content;border-left:0;animation:companyMarquee 56s linear infinite;will-change:transform}
+.logo-track>a,.logo-track>.type-logo{flex:0 0 clamp(190px,18vw,280px);width:clamp(190px,18vw,280px);height:118px;border-bottom:0}
+.logo-track.is-paused{animation-play-state:paused}
+@keyframes companyMarquee{to{transform:translateX(-50%)}}
+.logo-viewport.is-manual{overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:var(--ink) transparent;touch-action:pan-x}
+.logo-viewport.is-manual::-webkit-scrollbar{height:6px}
+.logo-viewport.is-manual::-webkit-scrollbar-track{background:transparent}
+.logo-viewport.is-manual::-webkit-scrollbar-thumb{background:var(--ink)}
+
+@media(max-width:720px){
+  .signal-rail{padding-inline:0}
+  .signal-rail header{padding-inline:18px;grid-template-columns:1fr auto;gap:8px 16px}
+  .signal-rail header p{grid-column:1/2}
+  .logo-motion-toggle{grid-column:2;grid-row:1/3;align-self:center}
+  .logo-track>a,.logo-track>.type-logo{flex-basis:180px;width:180px;height:96px}
+}
+@media(prefers-reduced-motion:reduce){.logo-track{animation:none;transform:none}}
+
+/* Restore the project-specific visual fields; they are static, not autoplay decoration. */
+.kick-card:before{display:block!important;opacity:1}
+.kick-card .live-orbit{display:block!important;opacity:.14}
+.kick-card .live-orbit i{display:block!important}
+.kick-card .live-orbit i:first-child{background:var(--blue)}
+.kick-card .live-orbit i:nth-child(2){background:var(--acid)}
+.banca-card .live-bars{display:flex!important;opacity:.55}
+
+/* Toolkit cards are informational, so they do not pretend to be clickable. */
+.skill:hover{transform:none;background:var(--paper);color:var(--ink)}
+.skill:nth-child(-n+3):hover{background:var(--ink);color:var(--paper)}
+.skill:nth-child(n+7):hover{background:rgba(224,224,206,.48);color:var(--ink)}
+
+.stack-title h2 i{color:var(--blue)}
